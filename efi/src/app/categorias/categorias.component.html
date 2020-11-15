@@ -2,7 +2,10 @@
 <div class="card mb-2">
     <div class="card-header d-flex justify-content-between align-items-center">
         <p>{{ category.name }}</p>
-        <div>
+    <div>
+    <button class="btn btn-primary" (click)="category.hide = !category.hide " >
+               Detalles
+            </button>
         </div>
         <div>
           <button class="btn btn-warning" (click)="deleteCategory(category)" >
@@ -11,6 +14,6 @@
       </div>
     </div>
     <div class="card-body" [hidden]="category.hide">
-        <p>Tipo: {{category.detail}}</p>
+        <p>Detalle: {{category.detail}}</p>
     </div>
 </div>

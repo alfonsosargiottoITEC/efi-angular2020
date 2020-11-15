@@ -14,7 +14,10 @@
         <input type="number" class='form-control' placeholder="Monto" #newPrice>
       </div>
       <div class="form-group">
-        <input type="text" class='form-control' placeholder="Categoría" #newCategory>
+        <label for="type">Categoría:</label>
+      <select class='form-control' name="newCategory"  #newCategory>
+        <option [value]="category.name" *ngFor="let category of categorias">{{category.name}}</option>
+      </select>
       </div>
       <div class="form-group">
       <label for="date">Mes del registro:</label>

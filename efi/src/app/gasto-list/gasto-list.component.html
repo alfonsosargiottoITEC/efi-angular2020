@@ -1,8 +1,17 @@
 
+<div class="container p-4">
+  <div class="row">  
+    <div class="col-md-5 text-center">
+      <app-gasto-form></app-gasto-form>
+    </div>
+    <div class="col-md-7">
+      <input type="text" class='form-control' name='filterGasto' placeholder="Buscar gasto " [(ngModel)]='filterGasto'>
+      <app-gastos *ngFor='let gasto of gastos | filter: filterGasto' [gasto]='gasto'></app-gastos>
+    </div>    
+ </div>
+</div>
 
 
 
-
-<app-gastos *ngFor='let gasto of gastos' [gasto]='gasto'></app-gastos>
 
 

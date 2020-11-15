@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-
 import { Gasto } from '../gasto';
-import { GASTOS } from '../mock-gastos';
+import { Category } from '../category';
+
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,9 @@ export class GastoService {
   constructor() {
     // this.gastos =GASTOS
    }
+
+
+  
 
   getGastos(){
     if(localStorage.getItem('gastos') === null) {

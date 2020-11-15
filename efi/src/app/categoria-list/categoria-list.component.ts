@@ -29,4 +29,6 @@ export class CategoriaListComponent implements OnInit {
     this.categoryService.addCategory(category);
   }
 
+  
+
 }

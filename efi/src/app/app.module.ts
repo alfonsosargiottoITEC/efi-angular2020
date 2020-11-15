@@ -13,6 +13,7 @@ import { GastoListComponent } from './gasto-list/gasto-list.component';
 import { GastoFormComponent } from './gasto-form/gasto-form.component';
 import { CategoriaFormComponent } from './categoria-form/categoria-form.component';
 import { CategoriaListComponent } from './categoria-list/categoria-list.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -25,14 +26,16 @@ import { CategoriaListComponent } from './categoria-list/categoria-list.componen
     GastoListComponent,
     GastoFormComponent,
     CategoriaFormComponent,
-    CategoriaListComponent
+    CategoriaListComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     RouterModule.forRoot([
-      {path: 'categoria-list', component: CategoriaListComponent}
+      {path: 'categoria-list', component: CategoriaListComponent},
+      {path: 'gasto-list', component: GastoListComponent}
     ]),
   ],
   providers: [GastoService],

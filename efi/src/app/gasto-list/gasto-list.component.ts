@@ -9,13 +9,15 @@ import {Gasto} from '../gasto';
 })
 export class GastoListComponent implements OnInit {
 
-
-
+  
   gastos: Gasto[];
-
+  
   constructor(
-    public gastoService: GastoService
-  ) { }
+        public gastoService: GastoService
+    ) { }
+    
+    
+  filterGasto = '';
 
   ngOnInit(): void {
     this.gastos = this.gastoService.getGastos();

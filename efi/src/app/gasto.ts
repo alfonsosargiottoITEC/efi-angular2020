@@ -2,7 +2,7 @@ export interface Gasto {
   type: string;
   name: string ;
   price: number ;
-  category: number;
+  category: string;
   date: string;
   hide: boolean;
 }

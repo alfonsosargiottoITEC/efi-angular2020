@@ -1,8 +1,16 @@
-<p>categoria-list works!</p>
-
-
-<div class="col-md-5 text-center">
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-5 text-center">
       <app-categoria-form></app-categoria-form>
+    </div>
+    <div class="col-md-7">
+      <app-categorias *ngFor='let category of categorias' [category]='category'> </app-categorias>
+    </div>
+    
+    
+  </div>
 </div>
 
-<app-categorias *ngFor='let category of categorias' [category]='category'> </app-categorias>
+
+
+

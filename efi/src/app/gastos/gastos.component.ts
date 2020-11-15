@@ -23,6 +23,8 @@ export class GastosComponent implements OnInit {
     public gastoService : GastoService
     ) {}
 
+  filterGasto = '';
+
   // ngOnInit(): void {
   //   this.getGastos();
   // }
