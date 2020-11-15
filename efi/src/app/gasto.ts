@@ -1,5 +1,5 @@
 export interface Gasto {
-  tipo: boolean,
+  type: string;
   name: string ;
   price: number ;
   category: number;

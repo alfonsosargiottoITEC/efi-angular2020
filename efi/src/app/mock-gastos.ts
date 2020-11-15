@@ -3,31 +3,31 @@ import { Gasto } from './gasto';
 
 export const GASTOS: Gasto[]=[
   {
-    tipo: true,
+    type: 'Gasto',
     name: 'cerveza',
     price: 200,
     category: 1,
-    date :'2020-12-01',
+    date :'Marzo',
     hide: true
 
     
   },
   {
-    tipo: true,
+    type: 'Gasto',
     name: 'pan',
     price: 100,
     category: 4,
-    date :'2020-11-23',
+    date :'Julio',
     hide: true
 
     
   },
   {
-    tipo: false,
+    type: 'Gasto',
     name: 'luz',
     price: 2004,
     category: 2,
-    date :'2020-10-10',
+    date :'Enero',
     hide: true
 
     

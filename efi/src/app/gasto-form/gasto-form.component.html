@@ -1,17 +1,26 @@
 <div class="card">
   <div class="card-body">
-    <form (submit)='addGasto(newName, newPrice,newCategory, newDate)'>
+    <form (submit)='addGasto(newType,newName, newPrice,newCategory, newDate)'>
       <div class="form-group">
-        <input type="text" class='form-control' placeholder="Nombre gasto" #newName>
+        <label for="type">Tip de registro:</label>
+      <select class='form-control' name="newType"  #newType>
+        <option [value]="type" *ngFor="let type of types">{{type}}</option>
+      </select>
       </div>
       <div class="form-group">
-        <input type="text" class='form-control' placeholder="Monto gasto" #newPrice>
+        <input type="text" class='form-control' placeholder="Nombre" #newName>
       </div>
       <div class="form-group">
-        <input type="text" class='form-control' placeholder="Categoría gasto" #newCategory>
+        <input type="number" class='form-control' placeholder="Monto" #newPrice>
       </div>
       <div class="form-group">
-        <input type="text" class='form-control' placeholder="Fecha gasto" #newDate>
+        <input type="text" class='form-control' placeholder="Categoría" #newCategory>
+      </div>
+      <div class="form-group">
+      <label for="date">Mes del registro:</label>
+        <select class='form-control' name="newDate"  #newDate>
+          <option [value]="date" *ngFor="let date of dates">{{date}}</option>
+        </select>
       </div>      
       <button type='submit' class ='btn btn-primary'>
         Guardar

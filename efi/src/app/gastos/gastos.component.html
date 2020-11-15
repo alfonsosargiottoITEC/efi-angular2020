@@ -1,21 +1,25 @@
 
 
 <div class="card mb-2">
-    <div class="card-header d-flex justify-content-between align-items-center">
+    <div class="card-header d-flex justify-content-between align-items-center"
+    [ngStyle]="{'background-color': (gasto.type==='Ingreso') ? '#73c7af' : '#dc143c'}">
         <p>{{ gasto.name }}</p>
         <div>
-            <button class="btn btn-primary" (click)="gasto.hide = !gasto.hide" >
+            <button class="btn btn-primary" (click)="gasto.hide = !gasto.hide " >
                Detalles
             </button>
         </div>
         <div>
-          <button class="btn btn-danger" (click)="deleteGasto(gasto)" >
+          <button class="btn btn-warning" (click)="deleteGasto(gasto)" >
               Borrar
           </button>
       </div>
     </div>
     <div class="card-body" [hidden]="gasto.hide">
-        <p>{{gasto.price}}</p>
+        <p>Tipo: {{gasto.type}}</p>
+        <p>Monto: {{gasto.price}}</p>
+        <p>Categoría: {{gasto.category}}</p>
+        <p>Fecha: {{gasto.date}}</p>
     </div>
 </div>
 

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Gasto } from '../gasto';
 import { GastoService } from '../gasto.service';
 
+
 @Component({
   selector: 'app-gastos',
   templateUrl: './gastos.component.html',
@@ -13,6 +14,8 @@ export class GastosComponent implements OnInit {
   @Input () gasto: Gasto;
 
   gastos: Gasto[];
+  
+  
 
   
   

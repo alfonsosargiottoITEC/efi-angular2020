@@ -1,5 +1,8 @@
 import { Component, OnInit, Output } from '@angular/core';
 import { GastoService } from '../gasto.service';
+
+
+
 @Component({
   selector: 'app-gasto-form',
   templateUrl: './gasto-form.component.html',
@@ -10,15 +13,16 @@ export class GastoFormComponent implements OnInit {
 
   constructor(private gastoService : GastoService) {}
 
-
+  types:string[]=['Gasto', 'Ingreso'];
+  dates:string[]=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 
   ngOnInit(): void {
   
    }
-  addGasto(newName: HTMLInputElement, newPrice: HTMLInputElement, newCategory: HTMLInputElement, newDate: HTMLInputElement){
-    console.log ('aagregando: ', newName.value, newPrice.value,newCategory.value, newDate.value);
+  addGasto(newType:HTMLInputElement, newName: HTMLInputElement, newPrice: HTMLInputElement, newCategory: HTMLInputElement, newDate: HTMLInputElement){
+    console.log ('aagregando: ',newType.value, newName.value, newPrice.value,newCategory.value, newDate.value);
     this.gastoService.addGasto({
-      tipo:true,
+      type: newType.value,
       name: newName.value,
       price: Number (newPrice.value),
       category: Number(newCategory.value),
@@ -30,8 +34,10 @@ export class GastoFormComponent implements OnInit {
     newPrice.value='',
     newCategory.value='',
     newDate.value=''
-    
+
+    newName.focus();
     return false;
   }
+  
 
 }
