@@ -1,5 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { GastoService } from '../gasto.service';
+import { GastoService } from '../services/gasto.service';
 
 
 

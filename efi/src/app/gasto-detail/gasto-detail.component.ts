@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Gasto } from '../gasto';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import { GastoService } from '../gasto.service';
+import { GastoService } from '../services/gasto.service';
 
 @Component({
   selector: 'app-gasto-detail',

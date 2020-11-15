@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-body">
+    <form (submit)='addCategory(newName,newDetail)'>
+      <div class="form-group">
+        <input type="text" class='form-control' placeholder="Nombre" #newName>
+      </div>
+      <div class="form-group">
+        <input type="text" class='form-control' placeholder="Detalle" #newDetail>
+      </div>
+      <button type='submit' class ='btn btn-primary'>
+        Guardar
+      </button>
+    </form>
+  </div>
+</div>

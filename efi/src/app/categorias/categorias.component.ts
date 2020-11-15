@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Category } from '../category';
+import { CategoryService } from '../services/categoria.service';
+
 
 @Component({
   selector: 'app-categorias',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoriasComponent implements OnInit {
 
-  constructor() { }
+
+  @Input () category:Category;
+
+  categorias: Category[];
+
+  constructor(
+    public categoryService: CategoryService
+  ) { }
 
   ngOnInit(): void {
   }
 
-}
+  deleteCategory(category: Category){
+
+    if (confirm('¿Estas seguro que querés eliminar este registro?')){
+
+      this.categoryService.deleteCategory(category);
+    }
+  }
+ 
+ }

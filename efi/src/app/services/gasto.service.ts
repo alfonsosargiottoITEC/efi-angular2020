@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
-import { Gasto } from './gasto';
-import { GASTOS } from './mock-gastos';
+import { Gasto } from '../gasto';
+import { GASTOS } from '../mock-gastos';
 
 @Injectable({
   providedIn: 'root'
