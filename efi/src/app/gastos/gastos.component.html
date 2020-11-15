@@ -1,0 +1,23 @@
+
+
+<div class="card mb-2">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <p>{{ gasto.name }}</p>
+        <div>
+            <button class="btn btn-primary" (click)="gasto.hide = !gasto.hide" >
+               Detalles
+            </button>
+        </div>
+        <div>
+          <button class="btn btn-danger" (click)="deleteGasto(gasto)" >
+              Borrar
+          </button>
+      </div>
+    </div>
+    <div class="card-body" [hidden]="gasto.hide">
+        <p>{{gasto.price}}</p>
+    </div>
+</div>
+
+
+
