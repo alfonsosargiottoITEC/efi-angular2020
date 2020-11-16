@@ -3,7 +3,7 @@ import { Balance } from '../balance';
 import { BalanceService } from '../services/balance.service';
 import { Gasto } from '../gasto';
 import { GastoService } from '../services/gasto.service';
-import { BALANCES } from '../mock-balances';
+
 
 
 @Component({
@@ -14,8 +14,9 @@ import { BALANCES } from '../mock-balances';
 })
 export class BalanceListComponent implements OnInit {
   
-  balances = BALANCES;
-  types:string[]=['Gasto', 'Ingreso'];
+  
+  balances: Balance [];
+  
 
   
   gastos : Gasto [];
@@ -27,7 +28,7 @@ export class BalanceListComponent implements OnInit {
   ngOnInit(): void {
 
     this.balances = this.balanceService.getBalances();
-    this.gastos = this.gastoService.getGastos();
+    // this.gastos = this.gastoService.getGastos();
     
   }
 

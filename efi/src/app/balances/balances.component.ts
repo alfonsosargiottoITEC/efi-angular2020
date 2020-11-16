@@ -1,7 +1,7 @@
 import { Component,Input, OnInit } from '@angular/core';
 import { Balance } from '../balance';
 import { BalanceService } from '../services/balance.service';
-import { BALANCES } from '../mock-balances';
+
 import { Gasto } from '../gasto';
 import { GastoService } from '../services/gasto.service';
 
@@ -19,29 +19,30 @@ export class BalancesComponent implements OnInit {
 
   // gastos: Gasto[];
 
-  balances = BALANCES;
-  // balances: Balance[];
+  // balances = BALANCES;
+  balances: Balance[];
+  
   types:string[]=['Gasto', 'Ingreso'];
   constructor(public balanceService : BalanceService) { }
 
   ngOnInit(): void {
 
-    this.balances = this.balanceService.getBalances();
+    // this.balances = this.balanceService.getBalances();
     
   }
 
 
-  addBalance(newMes,newIngreso,newGasto,newTotal){
-    console.log ('aagregando balance: ', newMes.value, newIngreso.value, newGasto.value, newTotal.value);
-    this.balanceService.addBalance({
-      mes: newMes.value, 
-      ingreso: newIngreso.value,
-      gasto: newGasto.value,
-      total: newTotal.value,
-      hide: true
-    });
+  // addBalance(newMes,newIngreso,newGasto,newTotal){
+  //   console.log ('aagregando balance: ', newMes.value, newIngreso.value, newGasto.value, newTotal.value);
+  //   this.balanceService.addBalance({
+  //     mes: newMes.value, 
+  //     ingreso: newIngreso.value,
+  //     gasto: newGasto.value,
+  //     total: newTotal.value,
+  //     hide: true
+  //   });
     
 
-    return false;
-  }
+  //   return false;
+  // }
 }

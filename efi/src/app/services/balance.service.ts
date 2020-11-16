@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Balance } from '../balance';
-import { BALANCES } from '../mock-balances';
+
 @Injectable({
   providedIn: 'root'
 })

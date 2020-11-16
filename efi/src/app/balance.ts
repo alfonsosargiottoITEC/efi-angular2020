@@ -1,7 +1,7 @@
 export interface Balance {
   mes: string;
-  gasto: string ;
-  ingreso: string ;
+  gasto: number ;
+  ingreso: number ;
   total: number;
   hide: boolean;
 }

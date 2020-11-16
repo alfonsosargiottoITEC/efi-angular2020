@@ -24,7 +24,7 @@ export class GastoListComponent implements OnInit {
   }
 
   addGasto(gasto: Gasto) {
-    console.log(gasto);
+    
     this.gastoService.addGasto(gasto);
   }
 

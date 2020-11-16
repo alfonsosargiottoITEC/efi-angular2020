@@ -20,7 +20,6 @@ export class GastoFormComponent implements OnInit {
 
   types:string[]=['Gasto', 'Ingreso'];
   dates:string[]=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
-  // categorias: string [] = ['pan','carne',"luz"];
   categorias : Category [];
   filterGasto = '';
   date = '';
@@ -37,7 +36,6 @@ export class GastoFormComponent implements OnInit {
     
   }
   addGasto(newType:HTMLInputElement, newName: HTMLInputElement, newPrice: HTMLInputElement, newCategory: HTMLInputElement, newDate: HTMLInputElement){
-    console.log ('aagregando: ',newType.value, newName.value, newPrice.value,newCategory.value, newDate.value);
     this.gastoService.addGasto({
       type: newType.value,
       name: newName.value,
@@ -47,36 +45,53 @@ export class GastoFormComponent implements OnInit {
       hide: true
     });
     
-    newName.value='',
-    newPrice.value='',
-    newCategory.value='',
-    newDate.value=''
     
-    newName.focus();
-    return false;
-  }
-
-  addtoBalance(){
    this.gastos2 = this.gastoService.getGastos();
    let gastos = [];
    let ingresos = [];
    let totalGastos = [];
    let totalIngresos = [];
-   let balanceFinal = [];
-
-  //  console.log("#############3", this.gastos2)
-   this.gastos2.forEach(gasto =>{
-     if(gasto.type==='Gasto'){
-      totalGastos.push(gasto)
-     }else{
-      totalIngresos.push(gasto)
-     };
+   let meses = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+   let balanceFinal = [{mes:'Enero',gasto:0,ingreso:0,total:0,hide:true},
+   {mes:'Febrero',gasto:0,ingreso:0,total:0,hide:true},
+   {mes:'Marzo',gasto:0,ingreso:0,total:0,hide:true},
+   {mes:'Abril',gasto:0,ingreso:0,total:0,hide:true},
+   {mes:'Mayo',gasto:0,ingreso:0,total:0,hide:true},
+   {mes:'Junio',gasto:0,ingreso:0,total:0,hide:true},
+   {mes:'Julio',gasto:0,ingreso:0,total:0,hide:true},
+   {mes:'Agosto',gasto:0,ingreso:0,total:0,hide:true},
+   {mes:'Septiembre',gasto:0,ingreso:0,total:0,hide:true},
+   {mes:'Octubre',gasto:0,ingreso:0,total:0,hide:true},
+   {mes:'Noviembre',gasto:0,ingreso:0,total:0,hide:true},
+   {mes:'Diciembre',gasto:0,ingreso:0,total:0,hide:true},
+  ];
+  
+  this.gastos2.forEach(gasto =>{
+    balanceFinal.forEach(balance=>{
+      if(gasto.type==='Gasto'){
+        if (gasto.date == balance.mes){   
+          balance.gasto += gasto.price;  
+          balance.total -= gasto.price;       
+          
+        };
+      }else{
+        if (gasto.date == balance.mes){   
+          balance.ingreso += gasto.price;
+          balance.total += gasto.price;
+          
+        };
+      };
     });
     
-    console.log ('total gatots, ', totalGastos);
-    localStorage.setItem('balances', JSON.stringify(totalGastos));
+  });
+  
+  newName.value='',
+  newPrice.value='',
+  newCategory.value='',
+  newDate.value=''
+  newName.focus();
+  localStorage.setItem('balances', JSON.stringify(balanceFinal)); 
+  return false;
   }
-
- 
 
 }
