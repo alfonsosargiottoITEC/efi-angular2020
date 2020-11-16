@@ -23,7 +23,7 @@ export class CategoryService {
     } else {
       this.categorias = JSON.parse(localStorage.getItem('categorias'));
     }
-    console.log ("##################################################",this.categorias);
+
     return this.categorias;
   }
   

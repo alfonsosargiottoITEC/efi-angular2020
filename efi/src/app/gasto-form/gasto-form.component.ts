@@ -2,6 +2,8 @@ import { Component, OnInit, Output } from '@angular/core';
 import { GastoService } from '../services/gasto.service';
 import { Category } from '../category';
 import { CategoryService } from '../services/categoria.service';
+import { Gasto } from '../gasto';
+import { Balance } from '../balance';
 
 
 @Component({
@@ -21,6 +23,12 @@ export class GastoFormComponent implements OnInit {
   // categorias: string [] = ['pan','carne',"luz"];
   categorias : Category [];
   filterGasto = '';
+  date = '';
+  type = '';
+  category = '';
+
+  gastos2: Gasto[];
+  balances: Balance[];
   
   
   ngOnInit(): void {
@@ -47,6 +55,28 @@ export class GastoFormComponent implements OnInit {
     newName.focus();
     return false;
   }
-  
+
+  addtoBalance(){
+   this.gastos2 = this.gastoService.getGastos();
+   let gastos = [];
+   let ingresos = [];
+   let totalGastos = [];
+   let totalIngresos = [];
+   let balanceFinal = [];
+
+  //  console.log("#############3", this.gastos2)
+   this.gastos2.forEach(gasto =>{
+     if(gasto.type==='Gasto'){
+      totalGastos.push(gasto)
+     }else{
+      totalIngresos.push(gasto)
+     };
+    });
+    
+    console.log ('total gatots, ', totalGastos);
+    localStorage.setItem('balances', JSON.stringify(totalGastos));
+  }
+
+ 
 
 }

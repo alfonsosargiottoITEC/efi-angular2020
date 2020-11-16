@@ -1,0 +1,58 @@
+<!-- <div class="container p-4">
+  <div class="row">
+
+   <h4> {{|balance.total | balancepipe: }} </h4>
+    <div class="col-md-7">
+      
+      <app-balances> </app-balances>
+    </div>
+    
+    
+  </div>
+</div>
+<div class="container p-4">
+  <div class="row">  
+    <div class="col-md-5 text-center">
+      <app-gasto-form></app-gasto-form>
+    </div>
+    <div class="col-md-7">
+      <input type="text" class='form-control' name='filterGasto' placeholder="Buscar gasto " [(ngModel)]='filterGasto'>
+      <app-gastos *ngFor='let gasto of gastos | filter: filterGasto' [gasto]='gasto'></app-gastos>
+    </div>    
+ </div>
+</div>
+
+<div class="container p-4">
+<p>Balances: </p>
+  <div class="row">
+    <div class="col-md-5 text-center">
+     
+    </div>
+    <div class="col-md-7">
+     
+    </div>
+    <div class="form-group">
+        <label for="type">BALANCE:</label>
+      <select class='form-control' name="newMes">
+        <option [value]="balance.mes" *ngFor="let balance of balances">{{balance.mes}}</option>
+      </select>
+      </div>
+      <div class="form-group">
+        <label for="type">Tip de registro:</label>
+      <select class='form-control' name="newType"  #newType>
+        <option [value]="type" *ngFor="let type of types">{{type}}</option>
+      </select>
+      </div>
+
+</div> -->
+
+<div class="container p-4">
+  
+  <div class="row">  
+    <div class="col-md-5 text-center">
+    </div>
+    <div class="col-md-7">
+      <app-gastos *ngFor='let gasto of gastos' [gasto]='gasto'></app-gastos>
+    </div>    
+ </div>
+</div>

@@ -14,6 +14,8 @@ import { GastoFormComponent } from './gasto-form/gasto-form.component';
 import { CategoriaFormComponent } from './categoria-form/categoria-form.component';
 import { CategoriaListComponent } from './categoria-list/categoria-list.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { BalanceListComponent } from './balance-list/balance-list.component';
+import { BalancepipePipe } from './pipes/balancepipe.pipe';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { FilterPipe } from './pipes/filter.pipe';
     GastoFormComponent,
     CategoriaFormComponent,
     CategoriaListComponent,
-    FilterPipe
+    FilterPipe,
+    BalanceListComponent,
+    BalancepipePipe
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     AppRoutingModule,
     RouterModule.forRoot([
       {path: 'categoria-list', component: CategoriaListComponent},
-      {path: 'gasto-list', component: GastoListComponent}
+      {path: 'gasto-list', component: GastoListComponent},
+      {path: 'balance-list', component: BalanceListComponent}
     ]),
   ],
   providers: [GastoService],
