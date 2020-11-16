@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GastoService } from '../services/gasto.service';
 import {Gasto} from '../gasto';
+import { BalanceService } from '../services/balance.service';
 
 @Component({
   selector: 'app-gasto-list',
@@ -13,7 +14,7 @@ export class GastoListComponent implements OnInit {
   gastos: Gasto[];
   
   constructor(
-        public gastoService: GastoService
+        public gastoService: GastoService, public balanceService: BalanceService
     ) { }
     
     
@@ -29,5 +30,15 @@ export class GastoListComponent implements OnInit {
     return false;
     
   }
+
+  limpiarGastosyBalances (){
+    if (confirm('¿Estas seguro que querés borrar todos los gastos y balances registrados?')){
+      this.gastoService.clearGastos()
+      this.balanceService.clearBalances()
+
+    }
+
+  }
+  
 
 }

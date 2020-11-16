@@ -33,7 +33,7 @@ export class BalanceListComponent implements OnInit {
   }
 
   addBalance(balance: Balance){
-    this.balanceService.addBalance(balance);
+    this.balanceService.addToBalance();
   }
 
 }

@@ -54,7 +54,12 @@ export class GastoService {
       if (gasto == this.gastos[i])
         this.gastos.splice(i,1)
         localStorage.setItem('gastos', JSON.stringify(this.gastos));
+        
     };
+  }
+
+  clearGastos (){
+    localStorage.removeItem('gastos');
   }
 
   // getGastos(): Observable<Gasto[]>{

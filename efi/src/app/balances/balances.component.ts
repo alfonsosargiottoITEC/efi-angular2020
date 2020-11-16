@@ -78,10 +78,19 @@ export class BalancesComponent implements OnInit {
             });
               
               
-  localStorage.setItem('balances', JSON.stringify(balanceFinal)); 
+  // localStorage.setItem('balances', JSON.stringify(balanceFinal)); 
 
 
-
+  let balances = [];
+  if (localStorage.getItem('balances') === null){
+    balances = [];  
+    balances.push(balanceFinal);
+    localStorage.setItem('balances', JSON.stringify(balanceFinal));
+  }else{
+    balances = JSON.parse(localStorage.getItem('balances'));
+    balances.push(balanceFinal);
+    localStorage.setItem('balances', JSON.stringify(balanceFinal));
+  };
 
   };
 
