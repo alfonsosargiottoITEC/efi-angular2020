@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Gasto } from '../gasto';
 import { GastoService } from '../services/gasto.service';
-
+import { Balance } from '../balance';
+import { BalanceService } from '../services/balance.service';
 
 @Component({
   selector: 'app-gastos',
@@ -20,7 +21,8 @@ export class GastosComponent implements OnInit {
   
   
   constructor(
-    public gastoService : GastoService
+    public gastoService : GastoService,
+    public balanceService : BalanceService
     ) {}
 
   filterGasto = '';

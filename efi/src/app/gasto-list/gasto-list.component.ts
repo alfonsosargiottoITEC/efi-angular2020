@@ -26,6 +26,8 @@ export class GastoListComponent implements OnInit {
   addGasto(gasto: Gasto) {
     
     this.gastoService.addGasto(gasto);
+    return false;
+    
   }
 
 }

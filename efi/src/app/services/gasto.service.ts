@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Gasto } from '../gasto';
 import { Category } from '../category';
+import { Balance } from '../balance';
 
 
 @Injectable({
@@ -10,12 +11,13 @@ import { Category } from '../category';
 export class GastoService {
 
   gastos: Gasto[];
+  balancea2: Balance [];
 
 
   
 
   constructor() {
-    // this.gastos =GASTOS
+   
    }
 
 
@@ -42,7 +44,8 @@ export class GastoService {
       gastos = JSON.parse(localStorage.getItem('gastos'));
       gastos.push(gasto);
       localStorage.setItem('gastos', JSON.stringify(gastos));
-    }
+    };
+    
     
   }
 

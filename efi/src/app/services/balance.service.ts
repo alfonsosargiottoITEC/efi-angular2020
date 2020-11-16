@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Balance } from '../balance';
+import { Gasto } from '../gasto';
 
 @Injectable({
   providedIn: 'root'
@@ -40,6 +41,14 @@ addBalance(balance: Balance){
   }
   
 }
+
+// deleteBalance (gasto: Gasto){
+//   for (let i = 0; i < this.gastos.length;i++){
+//     if (gasto == this.gastos[i])
+//       this.gastos.splice(i,1)
+//       localStorage.setItem('gastos', JSON.stringify(this.gastos));
+//   };
+// }
 
 
 }
