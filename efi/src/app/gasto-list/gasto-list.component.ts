@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GastoService } from '../services/gasto.service';
+import { GastoService } from '../services/gasto.service'; // importo el servicio
 import {Gasto} from '../gasto';
 import { BalanceService } from '../services/balance.service';
 
@@ -14,19 +14,19 @@ export class GastoListComponent implements OnInit {
   gastos: Gasto[];
   
   constructor(
-        public gastoService: GastoService, public balanceService: BalanceService
-    ) { }
-    
+        public gastoService: GastoService, public balanceService: BalanceService // declaramos un parámetro publica llamada "gastoService"
+    ) { }                                                                        // angular se encarga de inyectar el "gastoService"
+                                                                                // aqui en el constructor se realiza la inyección
     
   filterGasto = '';
 
   ngOnInit(): void {
-    this.gastos = this.gastoService.getGastos();
+    this.gastos = this.gastoService.getGastos(); // llamo y uso la función
   }
 
   addGasto(gasto: Gasto) {
     
-    this.gastoService.addGasto(gasto);
+    this.gastoService.addGasto(gasto); // llamo y uso la función
     return false;
     
   }

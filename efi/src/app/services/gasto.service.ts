@@ -5,31 +5,24 @@ import { Category } from '../category';
 import { Balance } from '../balance';
 
 
-@Injectable({
+@Injectable({ // decorador para marcar una clase como disponible para ser provista e injectada como una dependencia
   providedIn: 'root'
 })
-export class GastoService {
+export class GastoService { // nombre del servicio
 
-  gastos: Gasto[];
-  balancea2: Balance [];
-
-
-  
+  gastos: Gasto[];  // usamos la interface de Gasto
 
   constructor() {
    
-   }
+   }  
 
-
-  
-
-  getGastos(){
-    if(localStorage.getItem('gastos') === null) {
+  getGastos(){ // método del servicio para obtener los gastos
+    if(localStorage.getItem('gastos') === null) {  // busca el elemento 'gastos' en la local storage
       this.gastos = [];
     } else {
       this.gastos = JSON.parse(localStorage.getItem('gastos'));
     }
-    return this.gastos;
+    return this.gastos; // los retorna
   }
 
 
