@@ -1,8 +1,8 @@
 
 
-<div class="card mb-2">
+<div id='gastoTarjeta' class="card mb-2">
     <div class="card-header d-flex justify-content-between align-items-center"
-    [ngStyle]="{'background-color': (gasto.type==='Ingreso') ? '#73c7af' : '#dc143c'}">
+    [ngStyle]="{'background-color': (gasto.type==='Ingreso') ? '#A9E8AE' : '#F09984'}">
         <p><b>{{ gasto.name }}</b></p>
         <div>
             <button class="btn btn-primary" (click)="gasto.hide = !gasto.hide " >
@@ -15,7 +15,7 @@
           </button>
       </div>
     </div>
-    <div class="card-body" [hidden]="gasto.hide">
+    <div class="card-body" [hidden]="gasto.hide" [ngStyle]="{'background-color': (gasto.type==='Ingreso') ? '#8EB2D1' : '#D9C56C'}">
         <p><b>Tipo: </b> {{gasto.type}}</p>
         <p><b>Monto:</b> {{gasto.price | currency }}</p>
         <p><b>Categoría: </b> {{gasto.category}}</p>

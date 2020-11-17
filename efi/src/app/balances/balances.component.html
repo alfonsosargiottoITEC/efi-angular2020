@@ -12,7 +12,7 @@
     <div class="card-body" [hidden]="balance.hide">
         <p><b>Gasto:</b> {{balance.gasto | currency }}</p>
         <p><b>Ingreso: </b> {{balance.ingreso | currency}}</p>
-        <h4  [ngStyle]="{'background-color': (balance.total > 0) ? '#73c7af' : '#ff3333'}"><b>BALANCE FINAL:  {{balance.total | currency }}</b></h4>
+        <h4  [ngStyle]="{'background-color': (balance.total >= -1) ? '#73c7af' : '#ff3333'}"><b>BALANCE FINAL:  {{balance.total | currency }}</b></h4>
     </div>
 </div>
 

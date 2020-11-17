@@ -6,7 +6,7 @@
     </div>
     <div class="col-md-7">
       <button type="button" class="btn btn-danger" (click)="limpiarGastosyBalances();">Borrar todos los gastos</button>
-      <input type="text" class='form-control' name='filterGasto' placeholder="Buscar gasto " [(ngModel)]='filterGasto'>
+      <input type="text" class='form-control' name='filterGasto' placeholder="Buscar gasto por nombre o categoría" [(ngModel)]='filterGasto'>
       <app-gastos *ngFor='let gasto of gastos | filter: filterGasto' [gasto]='gasto'></app-gastos>
     </div>    
  </div>
